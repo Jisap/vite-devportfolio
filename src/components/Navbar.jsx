@@ -1,4 +1,4 @@
-import { Menu, Moon, Sun } from "lucide-react"
+import { Menu, Moon, Sun, X } from "lucide-react"
 import linkedin from "../assets/images/linkedin.png"
 import { NAV } from "../data/nav"
 import { useEffect, useState } from "react"
@@ -61,7 +61,7 @@ const Navbar = ({ toggle, theme }) => {
             {/* Theme Toggle */}
             <button
               onClick={toggle}
-              className="bg-bg3 border-border rounded-lg w-9 h-9 flex items-center justify-center"
+              className="bg-bg3 border-border rounded-lg w-9 h-9 flex items-center justify-center cursor-pointer"
             >
               {theme = "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
@@ -72,6 +72,39 @@ const Navbar = ({ toggle, theme }) => {
             >
               {open ? <X size={18} /> : <Menu size={18} />}
             </button>
+
+            {/* Mobile menu */}
+            <div
+              className={`
+                xl:hidden absolute top-full left-0 w-full bg-bg2 border-t border-border transition-all duration-300 overflow-hidden
+                ${open ? "max-h-96 py-4" : "max-h-0"}
+              `}
+            >
+              <div className="flex flex-col items-center gap-3">
+                {NAV.map((n) => (
+                  <button
+                    key={n}
+                    onClick={() => scroll(n.toLowerCase())}
+                    className="text-text2 px-4 rounded-md text-sm hover:text-text"
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Linkedin */}
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              className="bg-linear-to-r from-[#0077b5] to-[#00a0dc] rounded-lg w-9 h-9 flex items-center justify-center no-underline text-sm font-bold text-white p-2"
+            >
+              <img
+                src={linkedin}
+                alt="linkedin"
+                className=""
+              />
+            </a>
           </div>
         </div>
       </nav>
