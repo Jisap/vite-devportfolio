@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 
 
-const Navbar = () => {
+const Navbar = ({ toggle, theme }) => {
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -59,6 +59,19 @@ const Navbar = () => {
             </div>
 
             {/* Theme Toggle */}
+            <button
+              onClick={toggle}
+              className="bg-bg3 border-border rounded-lg w-9 h-9 flex items-center justify-center"
+            >
+              {theme = "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="xl:hidden bg-bg3 border border-border rounded-lg w-9 h-9 flex items-center justify-center"
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
           </div>
         </div>
       </nav>
