@@ -40,9 +40,26 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <span className="font-[Syne] font-extrabold text-[22px] grad">
+          <span className="font-[Syne] text-white font-extrabold text-[22px] grad">
             Alex.dev
           </span>
+
+          <div className="flex items-center gap-2">
+            {/* Desktop Nav */}
+            <div className="hidden xl:flex gap-5">
+              {NAV.map((n) => (
+                <button
+                  key={n}
+                  onClick={() => scroll(n.toLowerCase())}
+                  className="bg-none border-none text-text2 cursor-pointer px-3 py-1.5 rounded-md font-DM text-[13px] font-medium hover:text-accent transition-all duration-300"
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
+
+            {/* Theme Toggle */}
+          </div>
         </div>
       </nav>
     </>
