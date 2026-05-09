@@ -1,3 +1,4 @@
+import { MoveRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 
 const Hero = () => {
@@ -9,11 +10,11 @@ const Hero = () => {
   // Ciclo de vida: Escribir → Pausar → Borrar → Siguiente Título.
 
   useEffect(() => {
-    let i = 0, t = titles[ti], timeout; // i = indice del caracter, t = titulo actual, timeout = tiempo del setTimeout
+    let i = 0, t = titles[ti], timeout;       // i = indice del caracter, t = titulo actual, timeout = tiempo del setTimeout
 
     const type = () => {
-      if (i <= t.length) {
-        setTyped(t.slice(0, i));              // "F", "Fu", "Ful"...
+      if (i <= t.length) {                    // i va de 0 hasta t.length
+        setTyped(t.slice(0, i));              // t.slice(0, i) va cortando el string de izquierda a derecha "F", "Fu", "Ful"...
         i++;
         timeout = setTimeout(type, 80);       // cada 80ms una letra
       } else {
@@ -65,6 +66,23 @@ const Hero = () => {
           <p className='text-[17px] text-text2 max-w-150 mx-auto mb-10 leading-[1.8] animate-[fadeUp_0.8_0.3s_ease_both]'>
             I craft high-performace digital products with clean code and obsessive attention to detail. 6 + years turnbing complex problems into elegant solutions.
           </p>
+
+          {/* Buttons */}
+          <div className='flex gap-4 justify-center flex-wrap animate-[fadeUp_0.8s_0.45s_ease_both]'>
+            <button
+              onClick={() => document.getElementById("projects")?.scrollIntoView({})}
+              className='flex items-center bg-linear-to-br from-accent to-[#a865f7] text-white px-8 py-3.5 rounded-[10px] text-[15px] font-semibold font-syne transition-all duration-300 shadow-[0_4px_24px_rgba(108,99,255,0.3)] hover:translate-y-0.5 hover:shadow-[0_8px_32px_rgba(108,99,255,0.5)]'
+            >
+              View my work <MoveRight className='ms-3' />
+            </button>
+
+            <button
+              onClick={() => document.getElementById("contact")?.scrollIntoView({})}
+              className='bg-transparent border border-border text-text px-8 py-3.5 rounded-[10px] text-[15px] font-medium font-DM transition-all hover:border-accent hover:text-accent'
+            >
+              Contact me
+            </button>
+          </div>
         </div>
       </section>
     </>
