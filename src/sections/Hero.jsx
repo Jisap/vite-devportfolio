@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Hero = () => {
+
+  const [typed, setTyped] = useState("");
+  const titles = ["Full Stack Developer", "React Specialist", "Node.js Enginner", "Open Source Contributor"];
+  const [ti, setTi] = useState(0); // indice del titulo actual
+
+  // Ciclo de vida: Escribir → Pausar → Borrar → Siguiente Título.
+
+  useEffect(() => {
+    let i = 0, t = titles[ti], timeout; // i = indice del caracter, t = titulo actual, timeout = tiempo del setTimeout
+
+    const type = () => {
+      if (i <= t.length) {
+        setTyped(t.slice(0, i));              // "F", "Fu", "Ful"...
+        i++;
+        timeout = setTimeout(type, 80);       // cada 80ms una letra
+      } else {
+        setTimeout(erase, 2000)               // espera 2s antes de borrar  
+      }
+    }
+
+    const erase = () => {                     // borra de derecha a izquierda
+      if (i >= 0) {
+        setTyped(t.slice(0, i));
+        i--;
+        timeout = setTimeout(erase, 40);      // más rápido: 40ms
+      } else {
+        setTi(p => (p + 1) % titles.length)   // cambia al siguiente título
+      }
+    }
+
+    timeout = setTimeout(type, 300);
+    return () => clearTimeout(timeout);
+  }, [ti]);
+
   return (
     <>
       <section
