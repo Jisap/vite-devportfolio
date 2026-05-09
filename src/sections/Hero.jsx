@@ -71,18 +71,32 @@ const Hero = () => {
           <div className='flex gap-4 justify-center flex-wrap animate-[fadeUp_0.8s_0.45s_ease_both]'>
             <button
               onClick={() => document.getElementById("projects")?.scrollIntoView({})}
-              className='flex items-center bg-linear-to-br from-accent to-[#a865f7] text-white px-8 py-3.5 rounded-[10px] text-[15px] font-semibold font-syne transition-all duration-300 shadow-[0_4px_24px_rgba(108,99,255,0.3)] hover:translate-y-0.5 hover:shadow-[0_8px_32px_rgba(108,99,255,0.5)]'
+              className='flex items-center bg-linear-to-br from-accent to-[#a865f7] text-white px-8 py-3.5 rounded-[10px] text-[15px] font-semibold 
+              font-syne transition-all duration-300 shadow-[0_4px_24px_rgba(108,99,255,0.3)] hover:translate-y-0.5 hover:shadow-[0_8px_32px_rgba(108,99,255,0.5)]
+              cursor-pointer'
             >
               View my work <MoveRight className='ms-3' />
             </button>
 
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({})}
-              className='bg-transparent border border-border text-text px-8 py-3.5 rounded-[10px] text-[15px] font-medium font-DM transition-all hover:border-accent hover:text-accent'
+              className='bg-transparent border border-border text-text px-8 py-3.5 rounded-[10px] text-[15px] font-medium font-DM transition-all 
+              hover:border-accent hover:text-accent cursor-pointer'
             >
               Contact me
             </button>
           </div>
+
+          {/* Stats */}
+          <div className='flex gap-8 justify-center mt-16 flex-wrap animate-[fadeUp_0.8s_0.6s_ease_both]'>
+            {[["6+", "years Exp"], ["50+", "Projects"], ["5k+", "Github Stars"], ["80k", "Blog Readers"]].map(([n, label]) => (
+              <div key={label} className='text-center'>
+                <div className='text-[28px] font-extrabold font-syne grad'>{n}</div>
+                <div className='text-[12px] text-text2 mt-0.5'>{label}</div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
     </>
