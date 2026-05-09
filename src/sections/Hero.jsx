@@ -57,6 +57,14 @@ const Hero = () => {
           <h1 className='text-[clamp(44px,8vw,90px)] font-extrabold leading-[1.05] mb-5 animate-[fadeUp_0.8s_ease_forwards]'>
             Hi, I'm<span className='grad'>Alex Chen</span>
           </h1>
+
+          <h2 className='text-[clamp(20px,3.5vw,36px)] font-semibold text-text2 mb-6 min-h-12.5 animate-[fadeUp_0.8s_0.15s_ease_both]'>
+            {typed}<span className='cursor'></span>
+          </h2>
+
+          <p className='text-[17px] text-text2 max-w-150 mx-auto mb-10 leading-[1.8] animate-[fadeUp_0.8_0.3s_ease_both]'>
+            I craft high-performace digital products with clean code and obsessive attention to detail. 6 + years turnbing complex problems into elegant solutions.
+          </p>
         </div>
       </section>
     </>
