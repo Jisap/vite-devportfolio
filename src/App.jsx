@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero';
+import About from './sections/About';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         toggle={toggle}
       />
       <Hero />
+      <About />
     </>
   )
 }
