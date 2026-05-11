@@ -31,9 +31,30 @@ const About = () => {
                 </div>
               </div>
 
-
+              {/* floating badges */}
+              {[
+                { icon: "⚛️", text: "React Expert", top: "-16px", right: "-16px", bg: "#6c63ff" },
+                { icon: "🚀", text: "6+ Years", bottom: "-16px", left: "-16px", bg: "#ff6584" },
+              ].map((b) => (
+                <div key={b.text} className="absolute flex items-center gap-2 text-[13px] font-semibold text-white rounded-xl px-3.5 py-2
+                shadow-[0_4px_20px_rgba(0,0,0,0.3)] animate-[float_4s_ease-in-out_infinite]"
+                  style={{
+                    top: b.top,
+                    bottom: b.bottom,
+                    right: b.right,
+                    left: b.left,
+                    backgroundColor: b.bg,
+                  }}
+                >
+                  {b.icon} {b.text}
+                </div>
+              ))
+              }
             </div>
           </div>
+
+          {/* Test side */}
+
         </div>
       </section>
     </>
