@@ -59,6 +59,13 @@ const Skills = () => {
               </div>
             ))}
           </div>
+
+          {/* TOOLS */}
+          <div className="bg-bg2 border border-border rounded-2xl p-7">
+            <div className="text-13px text-text2 mb-4 font-medium">
+              Tools & Platforms
+            </div>
+          </div>
         </div>
       </section>
     </>
