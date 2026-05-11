@@ -12,34 +12,60 @@ const Experience = () => {
       <section ref={ref} id="experience" className="py-25 px-[5%] bg-bg2">
         <div className="max-w-275 mx-auto">
           <SectionHeader
-            label="My Journey"
+            label="Career"
             title="Work Experience"
             inView={inView}
           />
 
-          <div className="flex flex-col gap-8 relative before:absolute before:left-0 md:before:left-1/2 before:top-0 before:bottom-0 before:w-px before:bg-border">
-            {EXPERIENCE.map((exp, i) => (
-              <div
-                key={exp.role + exp.co}
-                className={`relative flex flex-col md:flex-row gap-8 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${i * 0.15}s` }}
+          <div className="relative">
+            {/* Time line */}
+            <div className="absolute left-5 top-0 bottom-0 w-0.5 rounded"
+              style={{
+                background: "linear-gradient(to bottom,var(--accent),var(--accent2))"
+              }}
+            />
+
+            {EXPERIENCE.map((e, i) => (
+              <div key={e.co} className="pl-14 mb-10 relative"
+                style={{
+                  opacity: inView ? 1 : 0,
+                  transform: inView ? "none" : "translateY(30px)",
+                  transition: `all 0.6s ${i * 0.1}s ease`
+                }}
               >
-                {/* DOT */}
-                <div className="absolute left-[-5px] md:left-1/2 md:ml-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_8px_var(--accent)] z-1" />
+                {/* Dot */}
+                <div className="absolute left-2.75 top-1 w-5 h-5 rounded-full"
+                  style={{
+                    background: "linear-gradient(135deg,var(--accent),var(--accent2))",
+                    border: "3px solid var(--bg2)",
+                    boxShadow: "0 0 12px var(--accent)"
+                  }}
+                />
 
-                <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:text-right md:pr-12' : 'md:order-2 md:pl-12'}`}>
-                  <div className="text-[13px] text-accent font-bold mb-1">{exp.period}</div>
-                  <h3 className="text-[19px] font-black font-syne mb-1">{exp.role}</h3>
-                  <div className="text-[14px] text-text2 font-medium mb-3">{exp.co}</div>
-                </div>
+                {/* Card */}
+                <div className="bg-card border border-border rounded-2xl p-6">
+                  <div className="flex items-start justify-between flex-wrap gap-2 mb-2">
+                    <div>
+                      <h3 className="font-syne font-bold text-[18px]">{e.role}</h3>
 
-                <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:order-2 md:pl-12' : 'md:text-right md:pr-12'}`}>
-                  <p className="text-text2 text-[14px] leading-relaxed mb-4 max-w-[500px] i % 2 === 0 ? '' : 'ml-auto'">
-                    {exp.desc}
+                      <div className="text-accent text-[14px] font-medium mt-0.5">{e.co}</div>
+                    </div>
+
+                    <span className="bg-bg3 border border-border rounded-lg px-3 py-1 text-[12px] text-text2 whitespace-nowrap">
+                      {e.period}
+                    </span>
+                  </div>
+
+                  <p className="text-text2 text-[14px] leading-[1.7] mb-3">
+                    {e.desc}
                   </p>
-                  <div className={`flex flex-wrap gap-2 ${i % 2 === 0 ? '' : 'justify-end'}`}>
-                    {exp.tags.map(t => (
-                      <span key={t} className="text-[11px] font-bold bg-bg3 border border-border px-2 py-1 rounded text-text3 uppercase tracking-wider">
+
+                  <div>
+                    {e.tags.map(t => (
+                      <span
+                        key={t}
+                        className="bg-bg3 rounded-md px-2.5 py-0.75 text-[12px] text-text2"
+                      >
                         {t}
                       </span>
                     ))}
@@ -48,6 +74,7 @@ const Experience = () => {
               </div>
             ))}
           </div>
+
         </div>
       </section>
     </>
