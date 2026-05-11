@@ -54,7 +54,32 @@ const About = () => {
           </div>
 
           {/* Test side */}
+          <div className={`
+            transition-all duration-800 delay-200 
+            ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}
+            `}
+          >
+            <div className='text-[13px] text-accent font-semibold tracking-[3px] uppercase mb-3'>
+              About me
+            </div>
 
+            <h2 className='text-[clamp(28px,4vw,48px)] font-extrabold mb-5 leading-[1.15]'>
+              Passionate about <br />
+              <span className="grad">building things</span>
+            </h2>
+
+            <p className='text-text2 mb-4 leading-[1.9] text-[15px]'>
+              I'm a Full Stack Developer based in Bangalore, India with 6+ years of
+              experience designing and building scalable web applications. I specialize
+              in React ecosystems and Node.js backends.
+            </p>
+
+            <p className='text-text2 mb-4 leading-[1.9] text-[15px]'>
+              When I'm not coding, I contribute to open source, write technical articles,
+              and speak at developer conferences. I believe great software is a blend of
+              engineering rigor and thoughtful design.
+            </p>
+          </div>
         </div>
       </section>
     </>
