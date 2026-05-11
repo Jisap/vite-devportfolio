@@ -1,8 +1,24 @@
-import React from 'react'
+import { SectionHeader } from "../components/SectionHeader"
+import useInView from "../hooks/useInView"
+import { SKILLS } from "../data/skills"
+import { TOOLS } from "../data/tools"
 
 const Skills = () => {
+
+  const { ref, inView } = useInView()
+
   return (
-    <div>Skills</div>
+    <>
+      <section ref={ref}>
+        <div className="max-w-275 mx-auto">
+          <SectionHeader
+            label="Tech Stack"
+            title="Skills & Technologies"
+            inView={inView}
+          />
+        </div>
+      </section>
+    </>
   )
 }
 
