@@ -79,6 +79,32 @@ const About = () => {
               and speak at developer conferences. I believe great software is a blend of
               engineering rigor and thoughtful design.
             </p>
+
+            <div className='grid grid-cols-2 gap-3 mb-7'>
+              {
+                [
+                  ["📍", "Bangalore, India"],
+                  ["🎓", "BITS Pilani, 2019"],
+                  ["💼", "Open to Remote"],
+                  ["📧", "alex@dev.io"],
+                ].map((i, t) => (
+                  <div
+                    key={t}
+                    className='flex items-center gap-2 text-[14px] text-text2'
+                  >
+                    <span>{i}</span>
+                    <span>{t}</span>
+                  </div>
+                ))
+              }
+            </div>
+
+            <a
+              href="#"
+              className='inline-flex items-center gap-2 bg-[linear-gradient(135deg,var(--accent),#a885f7)] text-white no-underline px-6 py-3 rounded-[10px] text-[14px] font-semibold font-syne'
+            >
+              ↓ Download Resume
+            </a>
           </div>
         </div>
       </section>
