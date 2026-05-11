@@ -9,7 +9,7 @@ const Skills = () => {
 
   return (
     <>
-      <section ref={ref}>
+      <section ref={ref} id="skills" className="py-25 px-[5%]">
         <div className="max-w-275 mx-auto">
           <SectionHeader
             label="Tech Stack"
@@ -24,7 +24,7 @@ const Skills = () => {
                 className="bg-card border border-border rounded-2xl p-6"
                 style={{
                   opacity: inView ? 1 : 0,
-                  tranform: inView ? "none" : "translateY(30px)",
+                  transform: inView ? "none" : "translateY(30px)",
                   transition: `all 0.6s ${si * 0.1}s ease`
                 }}
               >
@@ -39,7 +39,7 @@ const Skills = () => {
                         {items.n}
                       </span>
 
-                      <span className="text-tex2">
+                      <span className="text-text2">
                         {items.l}%
                       </span>
                     </div>
@@ -47,7 +47,7 @@ const Skills = () => {
                     <div className="h-1.25 bg-bg rounded overflow-hidden">
                       <div className="h-full rounded"
                         style={{
-                          with: inView ? `${items.l}%` : "0%",
+                          width: inView ? `${items.l}%` : "0%",
                           background: "linear-gradient(90deg, var(--accent), var(--accent2))",
                           transition: `width 1.2s ${si * 0.15 + 0.3}s cubic-bezier(0.4,0.2,1)`,
                           transformOrigin: "left"
@@ -70,7 +70,7 @@ const Skills = () => {
               {TOOLS.map((t, i) => (
                 <span
                   key={t}
-                  className="bg-bg3 border border-boder rounded-lg px-4 py-2 text-[13px] font-medium"
+                  className="bg-bg3 border border-border rounded-lg px-4 py-2 text-[13px] font-medium"
                   style={{
                     opacity: inView ? 1 : 0,
                     transition: `opacity 0.4s ${0.5 + i * 0.05}`

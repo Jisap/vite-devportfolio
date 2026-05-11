@@ -16,7 +16,7 @@ export const SectionHeader = ({ label, title, inView, children }) => {
           >
             <span className='grad'>
               {title.split(" ")[0]}
-            </span>
+            </span>{" "}
             {title.split(" ").slice(1).join(" ")}
           </h2>
         </div>
