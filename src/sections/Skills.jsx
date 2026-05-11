@@ -65,6 +65,21 @@ const Skills = () => {
             <div className="text-13px text-text2 mb-4 font-medium">
               Tools & Platforms
             </div>
+
+            <div className="flex flex-wrap gap-2.5">
+              {TOOLS.map((t, i) => (
+                <span
+                  key={t}
+                  className="bg-bg3 border border-boder rounded-lg px-4 py-2 text-[13px] font-medium"
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transition: `opacity 0.4s ${0.5 + i * 0.05}`
+                  }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
