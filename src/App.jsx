@@ -6,6 +6,7 @@ import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
 import Education from './sections/Education';
+import Achievements from './sections/Achievements';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       <Projects />
       <Experience />
       <Education />
+      <Achievements />
     </>
   )
 }
