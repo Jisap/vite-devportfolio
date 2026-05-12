@@ -44,7 +44,15 @@ const Achievements = () => {
                     <h3 className="text-[syne] font-bold text-[15px]">
                       {a.title}
                     </h3>
+
+                    <span className="text-[11px] text-accent bg-bg3 px-2 py-0.5 rounded-md whitespace-nowrap">
+                      {a.year}
+                    </span>
                   </div>
+
+                  <p className="text-[13px] text-text2 leading-[1.6] mt-1">
+                    {a.desc}
+                  </p>
                 </div>
               </div>
             ))}
