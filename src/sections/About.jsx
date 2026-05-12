@@ -87,13 +87,13 @@ const About = () => {
                   ["🎓", "BITS Pilani, 2019"],
                   ["💼", "Open to Remote"],
                   ["📧", "alex@dev.io"],
-                ].map((i, t) => (
+                ].map(([icon, text]) => (
                   <div
-                    key={t}
+                    key={text}
                     className='flex items-center gap-2 text-[14px] text-text2'
                   >
-                    <span>{i}</span>
-                    <span>{t}</span>
+                    <span>{icon}</span>
+                    <span>{text}</span>
                   </div>
                 ))
               }

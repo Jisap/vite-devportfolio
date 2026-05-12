@@ -10,7 +10,6 @@ const Education = () => {
 
   const { ref, inView } = useInView();
 
-
   return (
     <>
       <section id="education" ref={ref} className="py-25 px-[5%]">
@@ -25,7 +24,7 @@ const Education = () => {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {EDUCATION.map((e, i) => (
               <div
-                key={e.cat}
+                key={e.deg}
                 className="bg-card border border-border rounded-2xl p-7"
                 style={{
                   opacity: inView ? 1 : 0,
