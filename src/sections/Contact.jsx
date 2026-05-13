@@ -51,6 +51,50 @@ const Contact = () => {
               ))
             }
           </div>
+
+          {/* Right */}
+          <div className={`transition-all duration-700 delay-200 ${inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
+            {sent ? (
+              <div className='text-center py-10'>
+                <div className='text-5xl mb-4'>✅</div>
+
+                <h3 className='font-syne font-bold text-xl mb-2 grad'>
+                  Message Sent!
+                </h3>
+
+                <p className='text-text2'>
+                  I'll get back to you as soon as possible.
+                </p>
+              </div>
+            ) : (
+              <div className='bg-card border border-border rounded-2xl p-7 shadow-sm'>
+                {/* Inputs */}
+                <div className='space-y-4'>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={form.value}
+                    onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+                    className='w-full bg-bg3 border boder-border rounded-lg px-4 py-3 text-sm outline-none focus:border-accent transition'
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    value={form.value}
+                    onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                    className='w-full bg-bg3 border boder-border rounded-lg px-4 py-3 text-sm outline-none focus:border-accent transition'
+                  />
+                  <textarea
+                    placeholder="Your Message"
+                    rows={5}
+                    value={form.value}
+                    onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
+                    className='w-full bg-bg3 border boder-border rounded-lg px-4 py-3 text-sm outline-none focus:border-accent transition'
+                  />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
