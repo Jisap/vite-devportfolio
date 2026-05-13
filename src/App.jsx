@@ -9,6 +9,7 @@ import Education from './sections/Education';
 import Achievements from './sections/Achievements';
 import Blog from './sections/Blog';
 import Contact from './sections/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
       <Achievements />
       <Blog />
       <Contact />
+      <Footer />
     </>
   )
 }
