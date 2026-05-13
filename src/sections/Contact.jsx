@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SectionHeader } from '../components/SectionHeader'
 import useInView from '../hooks/useInView'
+import { ArrowRight } from 'lucide-react';
 
 
 
@@ -92,6 +93,14 @@ const Contact = () => {
                     className='w-full bg-bg3 border boder-border rounded-lg px-4 py-3 text-sm outline-none focus:border-accent transition'
                   />
                 </div>
+
+                <button
+                  onClick={() => setSent(true)}
+                  className='cursor-pointer inline-flex items-center justify-center group gap-3 w-full mt-5 py-3 rounded-lg text-white font-semibold text-sm bg-linear-to-r from-accent to-purple-500 hover:opacity-90 transition'
+                >
+                  Send Message
+                  <ArrowRight size={18} className='group-hover:translate-x-1 transition-transform duration-500 ease-in-out' />
+                </button>
               </div>
             )}
           </div>
